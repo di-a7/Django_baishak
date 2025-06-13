@@ -1,0 +1,7 @@
+# Database design
+Table: Note
+   title - science                        (char)
+   description - coujsdjfls kkjdslfk      (char)
+   data - 2025/2/13                       (datatime)
+   type - (easy, medium, hard)[enum]      (char)
+   page -                                 (integer)
