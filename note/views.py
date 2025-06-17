@@ -11,14 +11,31 @@ def note_list(request):
 
 def note_create(request):
    if request.method == "POST":
-      title = request.POST.get('title')
-      description = request.POST.get('description')
+      titles = request.POST.get('title')
+      descriptions = request.POST.get('description')
       
-      if title == '' and description == '':
+      if titles == '' and descriptions == '':
          context = {
             "error":"both field are required."
          }
          return render(request,'create.html', context)
-      Note.objects.create(title = title, descriptioin = description)
+      Note.objects.create(title = titles, descriptioin = descriptions)
       return redirect('/note')
    return render(request,'create.html')
+
+def note_edit(request, pk):
+   note = Note.objects.get(pk = pk)
+   context = {
+      "note" : note
+   }
+   if request.method == "POST":
+      titles = request.POST.get('title')
+      descriptions = request.POST.get('description')
+      note.title = titles
+      note.descriptioin = descriptions
+      note.save()
+      return redirect('/note')
+      
+   return render(request,'edit.html', context)
+
+# def note_delete : create a function to delete a note 

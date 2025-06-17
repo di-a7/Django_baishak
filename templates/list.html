@@ -10,6 +10,8 @@
          <th scope="col">Title</th>
          <th scope="col">Description</th>
          <th scope="col">Date</th>
+         <th scope="col">Action</th>
+
          </tr>
       </thead>
       <tbody>
@@ -19,6 +21,9 @@
          <td>{{note.title}}</td>
          <td>{{note.descriptioin}}</td>
          <td>{{note.date}}</td>
+         <td>
+            <a href="{{note.pk}}/edit" class = "btn btn-primary">Edit</a>
+         </td>
          </tr>
          {% endfor %}
       </tbody>
