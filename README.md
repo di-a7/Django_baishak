@@ -52,3 +52,6 @@ a.delete()
 
 <!-- to filter the objects -->
 model_name.objects.filter(field1 = "data", field2 = "data", field3~ = "data")
+
+<!-- create superuser -->
+python manage.py createsuperuser
